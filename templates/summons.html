@@ -1,0 +1,236 @@
+{% extends "layout.html" %}  <!-- Continue from format of layout.html -->
+
+<!-- Page design is very repetitive, would have to create individual html documents to modularise repeated sub-sections, if more banners were to be added. -->
+{% block content %}
+
+    <!-- Initiate script for summons button -->
+     <script src="{{url_for('static', filename='scripts/summon.js')}}" defer alt="summon-script"></script>
+
+    <!-- Selected choice is option 2, page formatted for Spirit Dive Yuno -->
+    {% if choice == 'opt2' %}
+        <center><h1 class="yunoText h1">&lt;Spirit Dive&gt; Yuno</h1></center>
+        
+       <!-- (Row-Container) Banner image, Summons pulled & butons -->
+        <div class="summons-container">
+            <div class="summons-img"> <!--Banner Image-->
+                <img src="{{url_for('static', filename='images/core/spirit dive yuno banner.jpeg')}}" alt="yunoBanner">
+            </div>
+    
+            <div class="summons-section"> <!-- User's summons -->
+                <p class="your-summons-text">Your Summons</p>
+                <div class="summons-pulled-container">  <!-- Result of summons -->
+                    <p> No Summons to Display </p>
+                </div>
+                <div class="summons-ticket-container">  <!-- Buttons to Summon -->
+                    <div class="left-ticket">
+                        <button id="single-summon-btn" data-table="yunoSummon">
+                            <img src="{{ url_for('static', filename='images/core/summons one ticket.png') }}" alt="oneTicket">
+                        </button>
+                    </div>
+                    <div class="right-ticket">
+                        <button id="multi-summon-btn" data-table="yunoSummon">
+                            <img src="{{ url_for('static', filename='images/core/summons ten ticket.png') }}" alt="tenTickets">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-rates"> <!-- Displayed Rates for summons -->
+
+            <!-- Character Rates -->
+            <div class="rate-up-mage">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> Rate-UP SSR Mages </p>
+                    <p class="right-rate-text orange-text"> 1.00% </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/characters/char spirit dive yuno.png') }}" alt="charSpiritDiveYuno" class="rate-up-image">
+            </div>
+
+            <div class="other-ssr-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SSR </p>
+                    <p class="right-rate-text yellow-text"> 1.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other ssr mages.png') }}" alt="otherSSRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-sr-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SR </p>
+                    <p class="right-rate-text blue-text"> 14.00% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other sr mages.png') }}" alt="otherSRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-r-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> R </p>
+                    <p class="right-rate-text green-text"> 43.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other r mages.png') }}" alt="otherRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+             <!-- Skill Page Rates (also addressed as SPage) -->  
+             <div class="rate-up-sPage">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> Rate-UP Skill Page </p>
+                    <p class="right-rate-text orange-text"> 0.68% </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/characters/skill page spirit dive yuno.png') }}" alt="SPageSpiritDiveYuno" class="rate-up-image">
+            </div>
+
+            <div class="other-ssr-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SSR </p>
+                    <p class="right-rate-text yellow-text"> 0.82% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other ssr skill pages.png') }}" alt="otherSSRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-sr-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SR </p>
+                    <p class="right-rate-text blue-text"> 10.00% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other sr skill pages.png') }}" alt="otherSRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-r-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> R </p>
+                    <p class="right-rate-text green-text"> 28.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other r skill pages.png') }}" alt="otherRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+        </div>
+
+    <!-- Default choice is option 1, page formatted for Black Asta -->
+    {% else %}
+        <center><h1 class="astaText h1">&lt;Black&gt; Asta</h1></center>
+
+        <!-- (Row-Container) Banner image, Summons pulled & butons -->
+        <div class="summons-container">
+            <div class="summons-img"> <!--Banner Image-->
+                <img src="{{ url_for('static', filename='images/core/black asta banner.jpeg') }}" alt="astaBanner">
+            </div>
+    
+            <div class="summons-section"> <!-- User's summons -->
+                <p class="your-summons-text">Your Summons</p>
+                <div class="summons-pulled-container">  <!-- Result of summons -->
+                    <p> No Summons to Display </p>
+                </div>
+                <div class="summons-ticket-container">  <!-- Buttons to Summon -->
+                    <div class="left-ticket">
+                        <button id="single-summon-btn" data-table="astaSummon">
+                            <img src="{{ url_for('static', filename='images/core/summons one ticket.png') }}" alt="oneTicket">
+                        </button>
+                    </div>
+                    <div class="right-ticket">
+                        <button id="multi-summon-btn" data-table="astaSummon">
+                            <img src="{{ url_for('static', filename='images/core/summons ten ticket.png') }}" alt="tenTickets">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- (Column-Container) Displayed Rates for summons -->
+        <div class="banner-rates">
+
+            <!-- Character Rates -->
+            <div class="rate-up-mage">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> Rate-UP SSR Mages </p>
+                    <p class="right-rate-text orange-text"> 1.00% </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/characters/char black asta.png') }}" alt="charBlackAsta" class="rate-up-image">
+            </div>
+
+            <div class="other-ssr-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SSR </p>
+                    <p class="right-rate-text yellow-text"> 1.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other ssr mages.png') }}" alt="otherSSRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-sr-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SR </p>
+                    <p class="right-rate-text blue-text"> 14.00% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other sr mages.png') }}" alt="otherSRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-r-mages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> R </p>
+                    <p class="right-rate-text green-text"> 43.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other r mages.png') }}" alt="otherRMages" class="other-rate-sizes">
+                </div>
+            </div>
+
+             <!-- Skill Page Rates (also addressed as SPage) -->  
+             <div class="rate-up-sPage">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> Rate-UP Skill Page </p>
+                    <p class="right-rate-text orange-text"> 0.68% </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/characters/skill page black asta.png') }}" alt="SPageBlackAsta" class="rate-up-image">
+            </div>
+
+            <div class="other-ssr-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SSR </p>
+                    <p class="right-rate-text yellow-text"> 0.82% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other ssr skill pages.png') }}" alt="otherSSRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-sr-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> SR </p>
+                    <p class="right-rate-text blue-text"> 10.00% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other sr skill pages.png') }}" alt="otherSRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+            <div class="other-r-sPages">
+                <div class="rate-up-text">
+                    <p class="left-rate-text"> R </p>
+                    <p class="right-rate-text green-text"> 28.50% </p>
+                </div>
+                <div class="other-rate-images">
+                    <img src="{{ url_for('static', filename='images/core/other r skill pages.png') }}" alt="otherRPages" class="other-rate-sizes">
+                </div>
+            </div>
+
+        </div>
+
+    {% endif %}
+
+{% endblock %}

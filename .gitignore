@@ -1,0 +1,13 @@
+#Ignore essentials
+env/
+__pycache__/
+*.log
+*.db
+
+#Ignore the .env files which contains environment variable data
+store.env
+*.env
+
+#Ignore specific files
+testing.py
+setup_db.py

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}  <!--Continue from format of layout.html-->
+
+{% block content %}
+
+<center><h1>Select a Summon to Simulate</h1></center>
+
+<div class="banner-items"> <!--Images placed on left/center of screen-->
+
+    <div class="img-text-container"> <!-- Row-Container with an image alongside the corresponding summon text -->
+        <div class="img-left">
+            <a href="{{ url_for('app_blueprint.summons', choice='opt1') }}" class="indexLinks">  <!-- send to summons page -->
+                <img src="{{ url_for('static', filename='images/core/black asta banner.jpeg') }}" alt="astaBanner">
+            </a>
+        </div>
+        <div class="text-right">
+            <a href="{{ url_for('app_blueprint.summons', choice='opt1') }}" class="indexLinks">  <!-- send to summons page -->
+                <p class="astaText">&lt;Black&gt; Asta</p>
+                <p class="limitedText">Limited Mage Drop Rate Up!</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="img-text-container final-img-text-container">  <!-- Final container must have (final-img-text-container) for footer padding. -->
+        <div class="img-left">
+            <a href="{{ url_for('app_blueprint.summons', choice='opt2') }}" class="indexLinks">  <!-- send to summons page -->
+                <img src="{{url_for('static', filename='images/core/spirit dive yuno banner.jpeg')}}" alt="yunoBanner">
+            </a>
+        </div>
+        <div class="text-right">
+            <a href="{{ url_for('app_blueprint.summons', choice='opt2') }}" class="indexLinks">  <!-- send to summons page -->
+                <p class="yunoText">&lt;Spirit Dive&gt; Yuno</p>
+                <p class="limitedText">Limited Mage Drop Rate Up!</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

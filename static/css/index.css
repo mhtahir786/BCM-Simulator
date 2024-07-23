@@ -1,0 +1,453 @@
+/*   Baseline Formatting   */
+html, body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    color: white;
+    font-style: oblique;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+    text-size-adjust: 10px;
+    color: aqua;
+}
+p{
+    padding-left: 20px;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*     *** Layout.html ***       */
+
+/* Site title styling */
+.site-title {
+    font-size: 35px;
+    margin: 0;  /* reset margins */
+    flex: 1; /* take up available space */
+}
+
+/* Setup for navigation container */
+.nav-container { 
+    display: flex;
+    justify-content: space-between;  /* places first element on left (title) and last on right(anchor links) */
+    align-items: center; /* vertically center */
+    background-color: red;
+    padding: 20px 20px; /* adjust for height then padding */
+}
+
+/* Anchor tag styling */
+.nav-container a {  
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: sans-serif;
+    color: white;
+    padding: 10px 20px; /* adjust padding (height then padding right) */
+    line-height: 1.5; /* adjust line height */
+}
+
+/* Animation when hovering over a navigation element */
+.nav-container .nav-link:hover {
+    border-bottom: purple 5px solid;
+}
+.indexLinks {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+/* Footer Formatting */
+.footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+}
+.footer-desc {
+    /* clamp format(minimum, preferred, maximum) */
+    font-size: clamp(0.2em, 1.0vw, 0.65em);
+    font-style: italic;
+    margin: 0;
+}
+
+
+/*     *** Index.html ***       */
+
+/* Container for the banner images in a column format */
+.banner-items{
+    display: flex;
+    flex-direction: column;  /* maintain a column format */
+    align-items: center;  /* align to center */
+    padding-top: 10px;
+    padding-left: 17%;
+    padding-right: 15%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container for each image and its corresponding text */
+.img-text-container{
+    display: flex;
+    align-items: center; /* align items centrally */
+    width: 100%;
+    margin-bottom: 20px;  /* space between image-text pairs */
+    box-sizing: border-box;
+}
+.final-img-text-container {
+    padding-bottom: 10%;  /* gap adjustment for footer content on home page */
+}
+
+/* Image formatting to left (banner pictures) */
+.img-left img{
+    width: 70%;  /* adjust image width */
+    max-width: 70%;  /* ensure images stay within a reasonable size */
+    height: auto;  /* maintain aspect ratio */
+    max-height: 300px;
+    margin-right: 10px;  /* space between image and text */
+    object-fit: contain;  /* ensure image fits within dimensions */
+}
+
+/* Text Container to right of respective image */
+.text-right {
+    flex-grow: 1;  /* take remaining space */
+    max-width: 70%;  /* ensure container doesn't get too wide */
+    white-space: normal;  /* prevent wrapping of individual words */
+    overflow: hidden;  /* hide overflow */
+    text-overflow: ellipsis;  /* indicate overflow with ellipsis */
+    box-sizing: border-box;
+}
+.text-right p{
+    margin: 0; /* remove default margins */
+    font-size: clamp(1.2em, 1.2vw, 1.2em); /* allow dynamic font size */
+}
+
+/* Further styling for text specific classes */
+.astaText {
+    color: red;
+    padding-bottom: 5%;
+}
+.yunoText {
+    color: #c1f392;
+    padding-bottom: 5%;
+}
+.limitedText {
+    color: yellow;
+    font-style: italic;
+    padding-left: 12%;
+}
+
+
+/*     *** Summons.html ***       */
+
+/* Adjust h1 for this page */
+.astaText.h1, .yunoText.h1{
+    padding-bottom: 10px;
+    font-size: clamp(1.0em, 4.0vw, 2.0em);
+}
+
+/* Container for image and the summons pulled */
+.summons-container{
+    display: flex;
+    align-items:center;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Specific container for image representing the summon */
+.summons-img {
+    width: 50%;
+    height: auto;
+    padding-top: 0%;
+    padding-bottom: 10px;
+    padding-right: 2%;  /* adjust space between image and container */
+}
+
+/* Formatting for image itself representing the summon */
+.summons-img img{
+    width: 100%;  /* adjust image width */
+    max-width: 100%;  /* ensure images stay within a reasonable size */
+    height: auto;  /* maintain aspect ratio */
+    max-height: 500px;
+    object-fit: contain;  /* ensure image fits within dimensions */
+}
+
+/* Specific Section for summons pulled (by user) */
+.summons-section {
+    flex-grow: 1;  /* take remaining space */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;  /* center content */
+    align-self: stretch;
+    max-width: 50%;  /* ensure container doesn't get too wide */
+    max-height: 50%;
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* Title displaying the summons pulled (by user) */
+.your-summons-text {
+    color: #ffffff;  /* white text on dark background contrast */
+    text-align: center;
+    border-bottom: purple 3px solid;
+    background-color: #1a1a1a;
+    background-size: cover; /* ensure background covers entire box */
+    width: 95%;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto; /* center horiontally */
+}
+
+/* Container to display the summons pulled */
+.summons-pulled-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 imgs per row */
+    grid-template-rows: repeat((2, 1fr));  /* 2 rows maximum */
+    gap: 3px;  /* adjust gap between images */
+    row-gap: 5px;  /* adjust gap between rows */
+    margin-top: 30px;
+    width: 100%;
+    height: 70%;
+    border: 3px solid #ccc; /* example border for visualization */
+    padding-left: 1%; /* centralise images within box */
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/* Formatting for images pulled in the summons themselves */
+.summons-pulled-container img {
+    width: 95%;  /* use full width of grid cell */
+    height: auto; 
+    object-fit: cover;  /* crop slightly */
+    aspect-ratio: 1 / 1;  /* ensure images are square */
+    border-radius: 5px; /* add rounded corners effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  /* add a slight shadow */
+}
+
+/* Container for summon ticket buttons */
+.summons-ticket-container {
+    display: flex;                    
+    justify-content: space-between;  /* space between left and right tickets */
+    align-items: center;  /* vertically center items */
+    margin-top: 30px;
+    padding: 0 5%;  /* padding on left and right sides */
+    box-sizing: border-box;  /* Ensure padding is included in width calculation */
+    max-width: 100%;                 
+    padding: 0;
+    flex-wrap: nowrap;
+}
+.left-ticket, .right-ticket {
+    flex-shrink: 1;  /* allow size adjustment */
+    max-width: 50%;  /* each takes 50% max */
+    margin: 0 10px;  /* adjust gap between tickets */
+}
+.left-ticket img, .right-ticket img {
+    max-width: 100%;
+    height: auto;
+    display: block;  /* remove extra space below images */
+}
+button:disabled {
+    cursor: not-allowed;  /* indicate button unavailable */
+    opacity: 0.5;
+}
+
+/* Container for displaying summon rates */
+.banner-rates {
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 50px;
+}
+
+/* All containers for rates information */
+.rate-up-mage, .other-ssr-mages, .other-sr-mages, .other-r-mages,
+.rate-up-sPage, .other-ssr-sPages, .other-sr-sPages, .other-r-sPages { 
+    margin-bottom: 30px;  /* spacing between containers */
+}
+
+/* Container for text containing rates information */
+.rate-up-text {
+    display: flex;
+    align-items: center;  /* center items vertically */
+    font-size: clamp(0.7em, 1.9vw, 4.0em);
+    margin-bottom: 10px;
+    border-bottom: purple 3px solid;
+    background-color: #1a1a1a;
+    background-size: cover; /* ensure background covers entire box */
+}
+.left-rate-text  {
+    margin-right: auto;  /* push to left edge */
+    margin-top: 0%;  /* reset margins, so text fits.. */
+    margin-bottom: 0%;
+}
+.right-rate-text {
+    margin-left: auto;  /* push to right edge */
+    margin-right: 3%;
+    margin-top: 0%;  /* reset margins, so text fits.. */
+    margin-bottom: 0%;
+}
+
+/* Formatting for rates colour */
+.orange-text {
+    color: #f2a44f;
+}
+.yellow-text{
+    color: #ddcb7c;
+}
+.blue-text {
+    color: #67b8d4;
+}
+.green-text {
+    color: #8dc181;
+}
+
+/* Formatting for images displaying rates */
+.rate-up-image {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.other-rate-images {  /* acts as a container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.other-rate-sizes{ 
+    width: 95%; /* adjust size by width */
+    height: auto;
+}
+
+/* Formatting for summons pulled */
+.ssr-pull {
+    border: 1px solid gold;
+    /* stacked gold shadows for glow effect, needs to override container shadows so uses !important */
+    box-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold !important; 
+}
+.sr-pull {
+    border: 1px solid #67b8d4;
+}
+.r-pull {
+    border: 1px solid #8dc181;
+}
+
+
+/*   ***Adjusting content for different size screens***   */
+/* Media query for medium screens */
+@media (max-width: 1200px) {
+
+    /* index.html */
+    .final-img-text-container {
+        padding-bottom: 25%;  /* increase gap between footer and content */
+    }
+    .img-left img {
+        width: 50%;  /* make image take full width for smaller screens */
+        max-width: 50%;
+    }
+    .text-right {
+        max-width: 50%;  /* allow text to take full width */
+        margin-top: 10px;  /* add spacing between image and text */
+    }
+    .text-right p {
+        font-size: clamp(0.7em, 1.1vw, 1em);  /* reduce font size slightly */
+    }
+
+    /* summons.html */
+    .left-ticket img, .right-ticket img {
+        margin: 0 5px;                /* Reduce margin on smaller screens */
+    }
+    .rate-up-image {
+        max-width: 20%;
+        height: auto;
+    }
+}
+
+/* Media query for small screens */
+@media (max-width: 830px) {
+
+    /* layout.html */
+    .site-title {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    .nav-container a{
+        font-size: 15px;
+    }
+
+    /* index.html */
+    .img-left img {
+        width: 40%;  /* make image take full width for smaller screens */
+        max-width: 40%;
+    }
+    .text-right {
+        max-width: 60%;  /* allow text to take full width */
+        margin-top: 10px;  /* add spacing between image and text */
+    }
+    .img-text-container {
+        flex-direction: column;  /* stack image and text vertically */
+        align-items: center;  /* align items to the start */
+        text-align: center;  /* center the text */
+    }
+    .text-right p {
+        font-size: clamp(0.6em, 1vw, 0.8em);  /* further reduce font size */
+    }
+    /* Reset padding for specific text */
+    .astaText .yunoText {
+        padding-bottom: 0%;
+    }
+    .limitedText {
+        padding-left: 0%;
+    }
+
+    /* summons.html */
+    .left-ticket img, .right-ticket img {
+        margin: 0 3px;                /* Reduce margin on smaller screens */
+    }
+    .rate-up-image {
+        max-width: 15%;
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+
+    /* layout.html */
+    .site-title {
+        margin-left: 0px;
+        font-size: 10px;
+    }
+    .nav-container a{
+        font-size: 10px;
+    }
+
+    /* index.html */
+    .img-left img {
+        width: 100%;  /* make image take full width for very small screens */
+        max-width: 100%;
+    }
+    .text-right {
+        max-width: 100%;  /* allow text to take full width */
+        margin-top: 10px;  /* add spacing between image and text */
+    }
+    .text-right p {
+        font-size: clamp(0.5em, 0.8vw, 0.6em);  /* further reduce font size for very small screens */
+    }
+
+    /* summons.html */
+    .left-ticket img, .right-ticket img {
+        margin: 0 0px;                /* Reduce margin on smaller screens */
+    }
+    .rate-up-image {
+        max-width: 7%;
+    }
+}

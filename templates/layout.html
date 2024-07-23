@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCM Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Acts as a base template for following pages (using jinja2 directive)-->
+
+    {% block nav %}
+    <div class="nav-container"> <!-- All navigation container content -->
+        <p class="site-title"> BCM Simulator </p>
+        <a href="{{url_for('app_blueprint.index')}}" class="nav-link"> Home </a>
+        <a href="{{url_for('app_blueprint.summons', choice='opt1')}}" class="nav-link"> Summons </a>
+    </div>
+    {% endblock nav %}
+
+    <div class="content">
+        {% block content %}
+            <!-- This block will be overridden by child templates -->
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="footer-desc">  <!-- Standard copyright disclaimer in footer content -->
+            <p> This site (all assets) nor it's creator is affiliated with or endorsed by; Black Clover Mobile, GArena, Vic Game Studios.  </p>
+        </div>
+    </footer>
+
+</body>
+</html>
